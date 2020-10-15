@@ -1,15 +1,23 @@
 <% if users.any? %>
-  <ul class="list-unstyled">
-    <% users.each do |user| %>
-      <li class="media">
-        <img class="mr-2 rounded" src="" alt="">
-        <div class="media-body">
-          <div><%= user.name %></div>
-          <div><p><%= link_to 'View profile', user_path(user) %></p></div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">プロフィール画像</th>
+        <th class="text-center">id</th>
+        <th class="text-center">氏名</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.each do |user| %>
+        <tr>
+          <td class="media"><img class="mr-2 rounded" src="" alt=""></td>
+          <td class="text-right"><%= link_to user.id, user_path(user) %></td>
+          <td class="text-center"><%= user.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
   <%= paginate users %>
 
