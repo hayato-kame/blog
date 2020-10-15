@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+div.toolbar {
+  padding: 15px 0;
+  font-size: 90%;
+  text-align: right;
+}
+
