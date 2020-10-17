@@ -24,9 +24,9 @@ class AccountsController < ApplicationController
   
   private 
   
-  #Strong Parameter
+  #Strong Parameter  
   def account_params
-    params.require(:user).permit(:name, :email)
+    params.require(:account).permit(:name, :email)
   end 
   
 end
