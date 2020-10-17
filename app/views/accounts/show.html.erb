@@ -1,0 +1,35 @@
+<% @page_title = "マイアカウント" %>
+
+<h1><%= @page_title %></h1>
+
+<div class="toolbar">
+  <%= link_to "アカウント情報の編集", :edit_account %>
+</div>
+
+
+<table class="table table-striped">
+  
+  <tr>
+    <th>Profile Image</th>
+    <td>
+  
+    </td>
+  </tr>
+  
+  
+  <tr>
+    <th width="150">id</th>
+    <td><%= @user.id %></td>
+  </tr>
+
+  <tr>
+    <th>Name</th>
+    <td><%= @user.name %></td>
+  </tr>
+
+  <tr>
+    <th>Mail Address</th>
+    <td><%= @user.email %></td>
+  </tr>
+
+</table>
