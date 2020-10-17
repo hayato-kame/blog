@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-div.toolbar {
+div.toolbar, ul.toolbar {
   padding: 15px 0;
   font-size: 90%;
   text-align: right;

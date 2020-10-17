@@ -2,9 +2,10 @@
 
 <h1><%= @page_title %></h1>
 
-<div class="toolbar">
-  <%= link_to "アカウント情報の編集", :edit_account %>
-</div>
+<ul class="toolbar">
+  <%= link_to "アカウント情報の編集", :edit_account %> | 
+  <%= link_to "パスワードの変更", :edit_password %>
+</ul>
 
 
 <table class="table table-striped">
