@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
   
   def update
     @user = current_user
-    @user = assign_attributes(account_params)
+    @user.assign_attributes(account_params)
     if @user.save
       flash[:success] = 'ユーザ情報を更新しました。'
       redirect_to :account
@@ -21,5 +21,12 @@ class AccountsController < ApplicationController
       render "edit"
     end 
   end
+  
+  private 
+  
+  #Strong Parameter
+  def account_params
+    params.require(:user).permit(:name, :email)
+  end 
   
 end
