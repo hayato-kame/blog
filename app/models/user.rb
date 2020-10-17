@@ -13,4 +13,6 @@ class User < ApplicationRecord
   validates :password, presence: { if: :current_password }
   
   
+  has_many :entries, dependent: :destroy
+  
 end
