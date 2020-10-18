@@ -1,0 +1,12 @@
+<%= @page_title = @entry.title + " - " + @entry.user.name + "さんのブログ" %>
+<h1><%= @entry.user.name %>さんのブログ</h1>
+
+<div class="toolbar"><%= link_to "トップページへに戻る", "/" %></div>
+
+<h2><%= @entry.title %></h2>
+<div>
+  <%= @entry.body %>
+  
+</div>
+
+<div class="toolbar"><%= link_to "トップページへに戻る", "/" %></div>
