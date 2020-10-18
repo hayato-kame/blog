@@ -20,3 +20,19 @@ end
     password_confirmation: 'user!'
     )
 end 
+
+body ="今日は、久しぶりに○○へ出かけてきました。\n\n" +
+      "天気も良く、景色も最高でした。\n\n"
+
+
+%w(佐藤\ 太郎 鈴木\ 次郎 高橋\ 花子).each do |name|
+  user = User.find_by(name: name)
+      
+  0.upto(9) do |number|
+    Entry.create(
+      user: user,
+      title: "最近の出来事#{number}",
+      body: body
+    )
+  end 
+end 
