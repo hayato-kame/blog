@@ -10,10 +10,13 @@
           <p><%= entry.title %></p>
         </div>
         <div>
-          <p><%= truncate(entry.body, length: 80 ) %>
-              <%= link_to "もっと読む", entry %>
-          </p>
+          <p><%= entry.body %></p>
         </div>
+          
+        <% if current_user == entry.user %>
+          <%= link_to "編集", entry_path(entry), class: 'btn btn-success btn-sm' %>
+        <% end %>
+         
         <% if current_user == entry.user %>
           <%= link_to "削除", entry, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-sm' %>
         <% end %>

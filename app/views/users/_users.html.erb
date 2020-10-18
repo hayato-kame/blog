@@ -1,5 +1,8 @@
 <% if users.any? %>
 
+<div class="row">
+  <div class="col-sm-8 offset-sm-2">
+
   <table class="table">
     <thead>
       <tr>
@@ -12,8 +15,8 @@
     <tbody>
       <% users.each do |user| %>
         <tr>
-          <td class="media"><img class="mr-2 rounded" src="" alt=""></td>
-          <td class="text-right"><%= user.id %></td>
+          <td class="media"><img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 50 }) %>" alt=""></td>
+          <td><%= user.id %></td>
           <td><%= link_to user.name, user_path(user) %></td>
           <td><%= link_to "編集", [:edit, user] %> | <%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
         </tr>
@@ -22,5 +25,6 @@
   </table>
 
   <%= paginate users %>
-
+  </div>
+</div>
 <% end %>

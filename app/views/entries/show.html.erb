@@ -9,4 +9,5 @@
   
 </div>
 
-<div class="toolbar"><%= link_to "トップページへに戻る", "/" %></div>
+
+<div class="toolbar"><%= link_to @entry.user.name + "さんのぺーじへ戻る" , user_path(@entry.user) %></div>
