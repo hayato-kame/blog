@@ -6,6 +6,9 @@ class PasswordsController < ApplicationController
     redirect_to :account
   end
   
+  
+  # current_userがいきなり使えるのは、親クラスのApplicationController で、
+  # include SessionsHelper を書いていて、モジュールを取り込んでいるから(Mix-in)
   def edit
     @user = current_user
   end

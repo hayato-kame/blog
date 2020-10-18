@@ -1,5 +1,26 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%=current_user.name %></p>
+  
+  <div class="row">
+    
+    <aside class="col-sm-5">
+      <%= form_with(model: @entry, local: true) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :title, class: 'form-control', rows: 2 %>
+        </div>
+        <div>
+          <%= f.text_area :body, class: 'form-control', rows: 15 %>
+        </div>
+ 
+          <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+
+      <% end %>
+    </aside>
+    
+    <div class="col-sm-7">
+      <%= render 'entries/entries', entries: @entries %>
+    </div>
+  </div>
+  
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
