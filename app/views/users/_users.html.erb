@@ -9,7 +9,7 @@
         <th class="text-center">プロフィール画像</th>
         <th class="text-center">id</th>
         <th class="text-center">氏名</th>
-        <th class="text-center">操作</th>
+        <!--<th class="text-center">操作</th>-->
       </tr>
     </thead>
     <tbody>
@@ -18,7 +18,7 @@
           <td class="media"><img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 50 }) %>" alt=""></td>
           <td><%= user.id %></td>
           <td><%= link_to user.name, user_path(user) %></td>
-          <td><%= link_to "編集", [:edit, user] %> | <%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+          <!--<td><　　%= link_to "編集", [:edit, user] %> | <　　%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>-->
         </tr>
       <% end %>
     </tbody>

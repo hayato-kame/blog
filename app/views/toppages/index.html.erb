@@ -5,10 +5,10 @@
     <aside class="col-sm-5">
       <%= form_with(model: @entry, local: true) do |f| %>
         <div class="form-group">
-          <%= f.text_area :title, class: 'form-control', rows: 2 %>
+          <%= f.text_area :title, class: 'form-control', rows: 2, placeholder: "(例) タイトル１"%>
         </div>
         <div>
-          <%= f.text_area :body, class: 'form-control', rows: 15 %>
+          <%= f.text_area :body, class: 'form-control', rows: 15,placeholder: "(例) 本文です" %>
         </div>
  
           <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
