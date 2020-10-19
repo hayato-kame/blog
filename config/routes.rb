@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root to: 'toppages#index'
   
   get 'signup', to: 'users#new'
-  resources :users do 
-    resources :entries, only: [:show]
-  end 
+  resources :users
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -14,6 +12,6 @@ Rails.application.routes.draw do
   resource :account, only: [:show, :edit, :update]
   resource :password, only: [:show, :edit, :update]
   
-  resources :entries, only: [:show, :create, :destroy]
+  resources :entries
   
 end

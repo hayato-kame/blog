@@ -4,8 +4,8 @@ class EntriesController < ApplicationController
   # before_actionコールバックの :require_user_logged_in によって、この EntriesController の全アクションはログインが必須になります。
   before_action :require_user_logged_in
   
-  # before_actionコールバックの :correct_user, only: [:destroy] によって、destroy アクションが実行される前に correct_user が実行されます。
-  before_action :correct_user, only: [:destroy, :show]
+  # before_actionコールバック　　:destroy, :show, :edit, :updateアクションが実行される前に correct_user が実行されます。
+  before_action :correct_user, only: [:destroy, :show, :edit, :update]
   
   # コールバックによって取得した値が@entryに入ってる
   def show
@@ -25,6 +25,22 @@ class EntriesController < ApplicationController
     end 
   end
 
+ 
+  def edit
+    return @entry
+  end
+  
+  # before_actionコールバックで、 @entryには、値が入ってる
+  def update
+    @entry.assign_attributes(entry_params)
+    if @entry.save
+      flash[:success] = '記事を変更しました。'
+      redirect_to @entry
+    else 
+      flash.now[:danger] = '記事を変更できませんでした。'
+      render "edit"
+    end
+  end 
 
   # @entryには、correct_userコールバックで検索してきたオブジェクトが入っています。
   def destroy

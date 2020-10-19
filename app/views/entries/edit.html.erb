@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @entry, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      
+      <div class="form-group">
+        <%= f.label :title, 'タイトル' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :body, '本文' %>
+        <%= f.text_field :body, class: 'form-control' %>
+        
+        <%= f.submit 'Click', class: 'btn btn-primary btn-block' %>
+      </div>
+    
+    <% end %>
+    
+  </div>
+</div>

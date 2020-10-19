@@ -14,7 +14,7 @@
         </div>
           
         <% if current_user == entry.user %>
-          <%= link_to "編集", entry_path(entry), class: 'btn btn-success btn-sm' %>
+          <%= link_to "編集", edit_entry_path(entry), class: 'btn btn-success btn-sm' %>
         <% end %>
          
         <% if current_user == entry.user %>
