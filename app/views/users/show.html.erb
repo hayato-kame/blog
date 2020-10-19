@@ -1,3 +1,6 @@
+<% if current_user == @user %>
+  <div class="toolbar"><%= link_to "新規ブログを追加する", :root %></div>
+<% end %>
 <div class="row">
   
   <aside class="col-sm-4">
