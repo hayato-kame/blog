@@ -26,8 +26,9 @@ class EntriesController < ApplicationController
       flash[:success] = 'ブログを投稿しました。'
       redirect_to root_url
     else 
-      @entrys = current_user.entries.order(id: :desc).page(params[:page])
+      @entries = current_user.entries.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'ブログの投稿に失敗しました。'
+  
       render 'toppages/index'
     end 
   end
