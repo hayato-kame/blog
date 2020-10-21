@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
     else 
       @entries = current_user.entries.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'ブログの投稿に失敗しました。'
-  
+      @user = current_user
       render 'toppages/index'
     end 
   end

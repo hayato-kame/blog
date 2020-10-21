@@ -3,7 +3,7 @@
 
 <div class="toolbar"><%= link_to "トップページへに戻る", "/" %></div>
 
-<h2><%= @entry.title %></h2>
+<h2><%= simple_format(@entry.title) %></h2>
 <div>
   <%= simple_format(@entry.body) %>
   
