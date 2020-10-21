@@ -4,13 +4,20 @@ class EntriesController < ApplicationController
   # before_actionコールバックの :require_user_logged_in によって、この EntriesController の全アクションはログインが必須になります。
   before_action :require_user_logged_in
   
-  # before_actionコールバック　　:destroy, :show, :edit, :updateアクションが実行される前に correct_user が実行されます。
-  before_action :correct_user, only: [:destroy, :show, :edit, :update]
+  # before_actionコールバック　　:destroy, :edit, :updateアクションが実行される前に correct_user が実行されます。
+  before_action :correct_user, only: [:destroy, :edit, :update]
   
-  # コールバックによって取得した値が@entryに入ってる
+  
   def show
-    return @entry 
     
+    @entry = current_user.entries.find_by(id: params[:id])
+    
+    unless @entry
+      # ネストされたリソースのブログ記事へ
+      @user = User.find(params[:user_id])
+      @entry = @user.entries.find(params[:id])
+      
+    end 
   end
   
   def create
