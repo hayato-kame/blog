@@ -1,7 +1,7 @@
 <ul class="list-unstyled">
   <% entries.each do |entry| %>
     <li class="media mb-3">
-      <img class="mr-2 rounded" src="" alt="">
+      <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 50 }) %>" alt="">
       <div class="media-body">
         <div>
           <%= link_to entry.user.name, user_path(entry.user) %> <span class="text-muted">posted at <%= entry.created_at %></span>

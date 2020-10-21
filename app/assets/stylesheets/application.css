@@ -19,3 +19,12 @@ div.toolbar, ul.toolbar {
   text-align: right;
 }
 
+.list-unstyled img {
+  margin: 10px;
+}
+
+/* for Webkit */
+.form-control::-webkit-input-placeholder{
+    color: #9f9f9f;
+    font-size: 0.9em;
+}

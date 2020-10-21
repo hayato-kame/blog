@@ -1,3 +1,4 @@
+<% @page_title = "toppage" %>
 <% if logged_in? %>
   
   <div class="row">
@@ -7,10 +8,10 @@
       
         <%= render 'layouts/error_messages', model: f.object %>
         <div class="form-group">
-          <%= f.text_area :title, class: 'form-control', rows: 2 %>
+          <%= f.text_area :title, class: 'form-control', rows: 1, placeholder: "(例) タイトル" %>
         </div>
         <div>
-          <%= f.text_area :body, class: 'form-control', rows: 15 %>
+          <%= f.text_area :body, class: 'form-control', rows: 15, placeholder: "(例) 本文" %>
         </div>
  
           <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
@@ -19,7 +20,7 @@
     </aside>
     
     <div class="col-sm-7">
-      <%= render 'entries/entries', entries: @entries %>
+      <%= render 'entries/entries', entries: @entries, user: @user %>
     </div>
   </div>
   
